@@ -76,9 +76,17 @@
         }
 
         .hero-text {
-            background: rgba(1, 52, 129, 0.5); /* Semi-transparent background */
+            background: rgba(34, 139, 34, 0.6); /* Semi-transparent overlay */
             padding: 20px;
             border-radius: 10px;
+        }
+
+        .navbar {
+            background-color: #4CAF50;
+        }
+
+        .navbar-brand img {
+            border-radius: 5px;
         }
 
         .gallery img {
@@ -91,55 +99,82 @@
         .gallery img:hover {
             transform: scale(1.05);
         }
+
+        .card-about {
+            border: 0; /* Remove border for a cleaner look */
+            background: #f7f7f7; /* Light background color */
+        }
+
+        .card-about .card-body {
+            padding: 30px; /* Increase padding for more space */
+        }
     </style>
 </head>
 <body>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a class="navbar-brand" href="#"><b>SCOPS</b></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav mx-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#about">About Us</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#courses">Courses</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#contact">Contact</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand" href="#">
+        <img src="sanjo logo.jpg" alt="Sanjo College Logo" style="height: 40px; width: auto; border-radius: 5px;">
+        <b>SCOPS</b> ADMISSION 2024-25
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#about">About Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#courses">Courses</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#contact">Contact</a>
+            </li>
+        </ul>
+    </div>
+</nav>
 
-    <!-- Hero Section -->
-    <section class="text-center p-5" style="background-image: url('sanjo.jpg'); background-size: cover; background-position: center; height: 50vh;">
-        <div class="container d-flex align-items-center justify-content-center" style="height: 100%;">
-            <div class="hero-text">
-                <h1 class="text-white">Admissions 2024-25</h1>
-                <p class="text-white">Discover Excellence in Pharmaceutical Studies at Sanjo College of Pharmaceutical Studies!</p>
-                <a href="#apply" class="btn btn-warning">Enquire Now</a>
+<!-- Hero Section -->
+<section class="text-center p-5" style="background-image: url('sanjo.jpg'); background-size: cover; background-position: center; height: 50vh;">
+<div class="container d-flex align-items-center justify-content-center" style="height: 100%; position: relative;">
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(34, 139, 34, 0.6);"></div> <!-- Semi-transparent overlay -->
+
+    <div class="hero-text" style="z-index: 1; position: relative;"> <!-- Ensure the text is above the overlay -->
+        <h1 class="text-white">Admissions 2024-25</h1>
+        <p class="text-white">Discover Excellence in Pharmaceutical Studies at Sanjo College!</p>
+        <a href="#apply" class="btn btn-warning">Enquire Now</a>
+    </div>
+</div>
+</section>
+
+
+    <!-- Admission Poster -->
+    <section class="container my-5">
+        <div class="card text-center">
+            <div class="card-body">
+                <img src="social.png" alt="Admission Poster" style="width: 100%; border-radius: 10px;" />  <!-- Replace with your poster image -->
+                <a href="#apply" class="btn btn-primary mt-3">Enquire Now</a>
             </div>
         </div>
     </section>
 
     <!-- About Us -->
-    <section id="about" class="container my-5">
-        <div class="card text-center">
-            <div class="card-body">
-                <h2 class="text-primary">About Sanjo College of Pharmaceutical Studies</h2>
-                <p>Welcome to Sanjo College of Pharmaceutical Studies, a premier institution offering top-notch pharmacy education. Nestled near the Palakkad-Thrissur national highway, our college combines rigorous academics with hands-on training and industry exposure. Join us to embark on a journey of knowledge, innovation, and professional success.</p>
-            </div>
+<section id="about" class="container my-5">
+    <div class="card card-about text-center shadow-lg" style="background-color: #f9f9f9; border: none; border-radius: 15px;">
+        <div class="card-body p-5">
+            <h2 class="text-primary mb-4">About Sanjo College of Pharmaceutical Studies</h2>
+            <p class="text-muted">Sanjo College of Pharmaceutical Studies is a leading institution offering top-notch pharmacy education. Nestled near the Palakkad-Thrissur national highway, we combine rigorous academics with hands-on training and industry exposure. Join us for an extraordinary journey of learning, innovation, and professional success.</p>
         </div>
-    </section>
+    </div>
+</section>
+
 
     <!-- Photo Gallery -->
     <section id="gallery" class="container my-5">
         <h2 class="text-center text-primary">Photo Gallery</h2>
+        <hr>
         <div class="row gallery">
             <div class="col-md-4 mb-4">
                 <img src="1.jpeg" alt="College Campus" />
@@ -162,57 +197,58 @@
         </div>
     </section>
 
-    <!-- Courses Offered -->
-    <section id="courses" class="container my-5">
-        <h2 class="text-center text-primary">Courses Offered</h2>
-        <div class="row">
-            <div class="col-md-3">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <h4>D.Pharm (2 Years)</h4>
-                        <p>60 seats | Eligibility: 10+2 with Physics, Chemistry, Biology/Mathematics.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <h4>B.Pharm (4 Years)</h4>
-                        <p>60 seats | Eligibility: 10+2 with Physics, Chemistry, Mathematics/Biology with 50% aggregate.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <h4>M.Pharm (2 Years)</h4>
-                        <p>12 seats | Eligibility: B.Pharm with at least 55% marks from a recognized university.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <h4>B.Pharm Lateral Entry (3 Years)</h4>
-                        <p>6 seats | Eligibility: Diploma in Pharmacy with at least 50% marks in final year exams, or equivalent.</p>
-                    </div>
+<!-- Courses Offered -->
+<section id="courses" class="container my-5">
+    <h2 class="text-center text-primary mb-4">Courses Offered</h2>
+    <div class="row">
+        <div class="col-md-3 mb-4"> <!-- Added extra margin for spacing -->
+            <div class="card text-center shadow-lg" style="border-radius: 15px;">
+                <div class="card-body">
+                    <h4 class="card-title">D.Pharm (2 Years)</h4>
+                    <p class="card-text">60 seats | Eligibility: 10+2 with Physics, Chemistry, Biology/Mathematics.</p>
                 </div>
             </div>
         </div>
-    </section>
+        <div class="col-md-3 mb-4"> <!-- Extra margin for spacing -->
+            <div class="card text-center shadow-lg" style="border-radius: 15px;">
+                <div class="card-body">
+                    <h4 class="card-title">B.Pharm (4 Years)</h4>
+                    <p class="card-text">60 seats | Eligibility: 10+2 with Physics, Chemistry, Mathematics/Biology with 50% aggregate.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-4"> <!-- Extra margin for spacing -->
+            <div class="card text-center shadow-lg" style="border-radius: 15px;">
+                <div class="card-body">
+                    <h4 class="card-title">M.Pharm (2 Years)</h4>
+                    <p class="card-text">12 seats | Eligibility: B.Pharm with at least 55% marks from a recognized university.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-4"> <!-- Extra margin for spacing -->
+            <div class="card text-center shadow-lg" style="border-radius: 15px;">
+                <div class="card-body">
+                    <h4 class="card-title">B.Pharm Lateral Entry (3 Years)</h4>
+                    <p class="card-text">6 seats | Eligibility: Diploma in Pharmacy with at least 50% marks in final year exams, or equivalent.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 
     <!-- Contact Us -->
-    <section id="contact" class="container my-5">
-        <div class="card text-center">
-            <div class="card-body">
-                <h2 class="text-primary">Contact Us</h2>
-                <p><i class="fas fa-envelope"></i> Email: <a href="mailto:sanjocps@gmail.com">sanjocps@gmail.com</a></p>
-                <p><i class="fas fa-phone"></i> Phone: <a href="tel:7594009300">7594009300</a></p>
-                <p><i class="fas fa-map-marker-alt"></i> Address: Vellapara, Chithali P.O. Kuzhalmannam, Palakkad 678702, Kerala, India</p>
-                <a href="#apply" class="btn btn-warning">Enquire Now</a>
-            </div>
+<section id="contact" class="container my-5">
+    <div class="card text-center shadow-lg" style="border-radius: 15px; background-color: #f9f9f9;">
+        <div class="card-body p-5"> <!-- Improved padding -->
+            <h2 class="text-primary mb-4">Contact Us</h2> <!-- Added spacing -->
+            <p class="mb-3"><i class="fas fa-envelope text-info"></i> Email: <a href="mailto:sanjocps@gmail.com">sanjocps@gmail.com</a></p>
+            <p class="mb-3"><i class="fas fa-phone text-primary"></i> Phone: <a href="tel:7594009300">7594009300</a></p>
+            <p class="mb-3"><i class="fas fa-map-marker-alt text-danger"></i> Address: Vellapara, Chithali P.O. Kuzhalmannam, Palakkad 678702, Kerala, India</p>
+            <a href="#apply" class="btn btn-warning mt-4">Enquire Now</a> <!-- Added margin for spacing -->
         </div>
-    </section>
+    </div>
+</section>
 
 
     <a href="tel:7594009300" class="call-button">
