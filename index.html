@@ -108,6 +108,60 @@
         .card-about .card-body {
             padding: 30px; /* Increase padding for more space */
         }
+
+                /* Styles for the loading container */
+.loading-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff; /* You can change the background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Styles for the pulsing logo animation */
+.logo-pulse {
+    width: 250px; /* Adjust the size of your logo */
+    height: 250px;
+    /* You can change the background color */
+    border-radius: 50%;
+    animation: pulse 2s infinite; /* Adjust the animation duration */
+}
+
+/* Keyframes for the pulsing animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2); /* Adjust the scaling factor */
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Hide the website content initially */
+.website-content {
+    display: none;
+}
+
+/* Style for the loading image */
+.loading-container img {
+    max-width: 100%; /* Adjust the max width as needed */
+    max-height: 600%; /* Adjust the max height as needed */
+}
+
+/* Style for the "Powered by INVITX" text */
+.loading-container p {
+    font-size: 10px; /* Adjust the font size as needed */
+    font-weight: bold;
+    color: #333; /* You can change the text color */
+}
     </style>
 </head>
 <body>
@@ -115,7 +169,7 @@
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark">
     <a class="navbar-brand" href="#">
-        <img src="sanjo logo.jpg" alt="Sanjo College Logo" style="height: 40px; width: auto; border-radius: 5px;">
+        <img src="sanjo logo.jpeg" alt="Sanjo College Logo" style="height: 40px; width: auto; border-radius: 5px;">
         <b>SCOPS</b> ADMISSION
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -136,6 +190,15 @@
     </div>
 </nav>
 
+<div class="loading-container">
+    <div class="logo-pulse">
+      <img src="sanjo logo.jpeg">
+      
+      <p>Powered by <b>INVITX</b> | <b>ThinkerBytes</b></p>
+    </div>
+</div>
+
+<div class="website-content">
 <!-- Hero Section -->
 <section class="text-center p-5" style="background-image: url('sanjo.jpg'); background-size: cover; background-position: center; height: 50vh;">
 <div class="container d-flex align-items-center justify-content-center" style="height: 100%; position: relative;">
@@ -252,6 +315,8 @@
 </section>
 
 
+</div>
+
     <a href="tel:7594009300" class="call-button">
         <i class="fas fa-phone"></i>
     </a>
@@ -290,6 +355,18 @@
             }
         }
     </script>
+    <script>
+        // Wait for the page to fully load
+      window.addEventListener('load', function () {
+          // Hide the loading animation after 5 seconds
+          setTimeout(function () {
+              document.querySelector('.loading-container').style.display = 'none';
+              document.querySelector('.website-content').style.display = 'block';
+          }, 2000); // 5000 milliseconds = 5 seconds
+      });
+      
+      
+      </script>
 
     <!-- jQuery and Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
